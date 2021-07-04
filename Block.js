@@ -12,7 +12,11 @@ class Block{
         World.add(world, this.body);
         
       }
-     
+     score(){
+      if(this.visibility<0&&this.visibility>-55){
+        score++;
+      }
+     }
       display(){
         console.log(this.body.speed);
         var pos= this.body.position;

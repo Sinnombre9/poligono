@@ -9,6 +9,7 @@ var stand1,stand2;
 var polygon;
 var slingShot;
 var polygon_img;
+var score=0
 function preload(){
   polygon_img=loadImage("polygon.png");
 }
@@ -86,18 +87,34 @@ function draw() {
   block5.display();
   block6.display();
   block7.display();
+  block1.score();
+  block2.score();
+  block3.score();
+  block4.score();
+  block5.score();
+  block6.score();
+  block7.score();
   fill("pink");
   block8.display();
   block9.display();
   block10.display();
   block11.display();
   block12.display();
+  block8.score();
+  block9.score();
+  block10.score();
+  block11.score();
+  block12.score();
   fill("turquoise");
   block13.display();
   block14.display();
   block15.display();
+  block13.score();
+  block14.score();
+  block15.score();
   fill("grey");
   block16.display();
+  block16.score();
   fill("skyblue");
   blocks1.display();
   blocks2.display();
@@ -113,9 +130,9 @@ function draw() {
   fill("gold");
   imageMode(CENTER)
   image(polygon_img ,polygon.position.x,polygon.position.y,40,40);
-
+ 
   slingShot.display();
-  
+  text("Puntos"+score,800,100)
 }
 function mouseDragged(){
   Matter.Body.setPosition(this.polygon,{x:mouseX,y:mouseY});
